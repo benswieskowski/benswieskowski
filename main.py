@@ -8,7 +8,6 @@ CANONICAL_HOST = "benswieskowski.com"
 @app.before_request
 def redirect_www_to_apex():
     host = request.headers.get("Host", "").split(":")[0]
-
     if host == f"www.{CANONICAL_HOST}":
         return redirect(f"https://{CANONICAL_HOST}{request.full_path}".rstrip("?"), code=301)
 
@@ -16,6 +15,16 @@ def redirect_www_to_apex():
 @app.route("/")
 def home():
     return render_template("index.html")
+
+
+@app.route("/privacy")
+def privacy():
+    return render_template("privacy.html")
+
+
+@app.route("/terms")
+def terms():
+    return render_template("terms.html")
 
 
 @app.route("/robots.txt")
