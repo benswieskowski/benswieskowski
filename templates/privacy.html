@@ -1,262 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ4B3MYSZX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-NQ4B3MYSZX');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy — Gem Slap</title>
-    <link rel="icon" href="/static/favicon.ico" sizes="48x48">
-    <link rel="icon" href="/static/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/static/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --bg: #050508;
-            --surface: rgba(255,255,255,0.03);
-            --border: rgba(255,255,255,0.07);
-            --text: rgba(255,255,255,0.82);
-            --muted: rgba(255,255,255,0.42);
-            --faint: rgba(255,255,255,0.15);
-            --accent-a: #A8F7F4;
-            --accent-b: #B3C6FF;
-            --accent-c: #D4A7FF;
-            --accent-d: #FFA7D4;
-        }
-
-        html, body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Georgia', serif;
-            line-height: 1.75;
-            min-height: 100vh;
-        }
-
-        body {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem 6rem;
-        }
-
-        .site-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 4rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .logo {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.05rem;
-            font-weight: 800;
-            letter-spacing: 0.22em;
-            background: linear-gradient(120deg, var(--accent-a) 0%, var(--accent-b) 35%, var(--accent-c) 65%, var(--accent-d) 100%);
-            background-size: 250% 250%;
-            animation: grad 5s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
-
-        @keyframes grad {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .back-link {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.72rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--muted);
-            text-decoration: none;
-            border: 1px solid var(--border);
-            border-radius: 2rem;
-            padding: 0.4rem 0.9rem;
-            transition: color 0.2s, border-color 0.2s;
-        }
-        .back-link:hover { color: var(--text); border-color: var(--faint); }
-
-        .doc-title {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: clamp(1.8rem, 6vw, 2.6rem);
-            font-weight: 800;
-            letter-spacing: -0.01em;
-            line-height: 1.1;
-            margin-bottom: 0.6rem;
-            background: linear-gradient(120deg, var(--accent-a) 0%, var(--accent-b) 40%, var(--accent-c) 75%, var(--accent-d) 100%);
-            background-size: 250% 250%;
-            animation: grad 5s ease infinite;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .doc-meta {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.72rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-bottom: 3rem;
-        }
-
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), transparent);
-            margin: 2.5rem 0;
-        }
-
-        section { margin-bottom: 2.8rem; }
-
-        h2 {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.62rem;
-            font-weight: 700;
-            letter-spacing: 0.22em;
-            text-transform: uppercase;
-            color: var(--accent-c);
-            margin-bottom: 1rem;
-        }
-
-        p { font-size: 0.96rem; color: var(--text); margin-bottom: 1rem; }
-
-        ul { padding-left: 1.4rem; margin-bottom: 1rem; }
-        li { font-size: 0.96rem; color: var(--text); margin-bottom: 0.45rem; }
-
-        a { color: var(--accent-b); text-decoration: none; border-bottom: 1px solid rgba(179,198,255,0.25); transition: border-color 0.2s; }
-        a:hover { border-color: var(--accent-b); }
-
-        .highlight-box {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-left: 2px solid var(--accent-c);
-            border-radius: 0.5rem;
-            padding: 1rem 1.2rem;
-            margin: 1.2rem 0;
-        }
-        .highlight-box p { margin: 0; font-size: 0.88rem; color: var(--muted); }
-
-        footer {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 0.68rem;
-            letter-spacing: 0.08em;
-            color: var(--faint);
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Ben Swieskowski</title>
+  <meta name="description" content="Privacy Policy for benswieskowski.com." />
+  <meta name="theme-color" content="#020617" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+  </style>
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
 </head>
-<body>
 
-    <header class="site-header">
-        <a class="logo" href="/">GEM SLAP</a>
-        <a class="back-link" href="/">← Play</a>
-    </header>
+<body class="min-h-screen bg-slate-50 text-slate-950 antialiased">
+  <header class="border-b border-slate-200/80 bg-white">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-5 py-4 sm:px-8">
+      <a href="{{ url_for('home') }}" class="text-lg font-black tracking-tight text-slate-950">Ben Swieskowski</a>
+      <a href="{{ url_for('home') }}" class="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-950 transition hover:border-slate-500">Back to site</a>
+    </div>
+  </header>
 
-    <h1 class="doc-title">Privacy Policy</h1>
-    <p class="doc-meta">Last updated: March 2026 &nbsp;·&nbsp; Gem Slap</p>
+  <main class="mx-auto max-w-5xl px-5 py-14 sm:px-8">
+    <article class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm sm:p-10">
 
-    <div class="divider"></div>
+      <p class="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-blue-700">Privacy Policy</p>
+      <h1 class="text-4xl font-black tracking-tight text-slate-950">Privacy Policy</h1>
+      <p class="mt-3 text-sm text-slate-500">Effective date: May 13, 2026</p>
 
-    <section>
-        <h2>Overview</h2>
-        <p>Gem Slap ("the Game") is operated by Ben Swieskowski ("I," "me," or "my"). This Privacy Policy explains what information is collected when you play Gem Slap, how it is used, and your rights regarding that information.</p>
-        <p>By using Gem Slap, you agree to the practices described in this policy. If you do not agree, please discontinue use of the Game.</p>
-    </section>
+      <div class="mt-8 space-y-8 text-base leading-7 text-slate-700">
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Overview</h2>
+          <p class="mt-3">This Privacy Policy explains how Ben Swieskowski (“Ben Swieskowski,” “I,” “me,” or “my”) collects, uses, and protects information when you visit benswieskowski.com or contact me about consulting services.</p>
+        </section>
 
-    <section>
-        <h2>Information Collected</h2>
-        <p>I collect information in two ways:</p>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Information I collect</h2>
+          <p class="mt-3">I may collect information you voluntarily provide, such as your name, email address, company, website, current advertising channels, approximate ad spend, and any other details you submit by email, calendar booking, or other contact method.</p>
+          <p class="mt-3">The site may also collect basic technical information automatically, such as browser type, device type, pages visited, referring URLs, IP address, and approximate location. This information may be collected through hosting logs, analytics tools, or similar technologies.</p>
+        </section>
 
-        <p><strong style="color:rgba(255,255,255,0.7)">1. Locally in your browser (not transmitted to me)</strong></p>
-        <p>Gem Slap stores your game progress — including level completion, personal best times, and settings — in your browser's <code style="font-family:monospace;font-size:0.85em;color:var(--accent-a)">localStorage</code>. This data never leaves your device and is not accessible to me or any third party. You can clear it at any time by clearing your browser's site data.</p>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">How I use information</h2>
+          <p class="mt-3">I use information to respond to inquiries, schedule intro calls, evaluate fit for consulting services, provide requested information, improve the site, understand site performance, and maintain basic security and reliability.</p>
+        </section>
 
-        <p><strong style="color:rgba(255,255,255,0.7)">2. Automatically via Google Analytics</strong></p>
-        <p>I use Google Analytics to understand how people use the Game. Google Analytics automatically collects:</p>
-        <ul>
-            <li>Your IP address (typically anonymized)</li>
-            <li>Device type, operating system, and browser</li>
-            <li>Pages visited, time spent, and general interactions</li>
-            <li>General geographic location (country or city level)</li>
-            <li>Referring website or source</li>
-        </ul>
-        <p>This data is processed by Google LLC under their own privacy policy. I only receive aggregated, anonymized reports and do not have access to data that identifies you personally. You can learn more at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and opt out using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Calendar booking and third-party services</h2>
+          <p class="mt-3">If you book a call, you may be directed to Google Calendar or another scheduling service. If you click external links, such as LinkedIn, those third-party services may collect information according to their own privacy policies.</p>
+          <p class="mt-3">I may use analytics services, such as Google Analytics, to understand how visitors use the site. These services may use cookies or similar technologies to collect usage data.</p>
+        </section>
 
-        <div class="highlight-box">
-            <p>I do not collect your name, email address, phone number, payment information, or any other personally identifying information directly.</p>
-        </div>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Cookies and analytics</h2>
+          <p class="mt-3">This site may use cookies or similar technologies for analytics, performance measurement, and basic functionality. You can control cookies through your browser settings. If analytics or advertising pixels are added in the future, they will be used to understand site activity and improve marketing performance.</p>
+        </section>
 
-    <section>
-        <h2>Cookies &amp; Tracking Technologies</h2>
-        <p>Google Analytics uses cookies and similar tracking technologies to distinguish users and analyze usage patterns. These are small files stored in your browser. You can disable cookies through your browser settings, though this may affect the functionality of some websites you visit.</p>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Sharing information</h2>
+          <p class="mt-3">I do not sell your personal information. I may share information with service providers that help operate the site, manage email, provide calendar booking, host the site, or analyze site performance. I may also disclose information if required by law or to protect my rights, property, or safety.</p>
+        </section>
 
-    <section>
-        <h2>How Information Is Used</h2>
-        <p>Analytics data is used solely to:</p>
-        <ul>
-            <li>Understand how players interact with the Game</li>
-            <li>Identify technical issues and improve performance</li>
-            <li>Make informed decisions about new features and content</li>
-        </ul>
-        <p>I do not sell, rent, or share your information with any third parties for marketing purposes.</p>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Data retention</h2>
+          <p class="mt-3">I keep information only as long as reasonably necessary for the purposes described in this Policy, including responding to inquiries, managing business records, and complying with legal obligations.</p>
+        </section>
 
-    <section>
-        <h2>Future Changes to Data Practices</h2>
-        <p>Gem Slap may add features in the future — such as advertising networks or in-app purchase systems — that involve additional data collection or third-party processors. If and when this occurs, this Privacy Policy will be updated before those features go live, and the "last updated" date at the top of this page will reflect the change. Your continued use of the Game after any update constitutes acceptance of the revised policy.</p>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Your choices</h2>
+          <p class="mt-3">You may contact me to request that I update or delete personal information you have provided, subject to reasonable business and legal requirements. You may also disable cookies in your browser settings.</p>
+        </section>
 
-    <section>
-        <h2>Children's Privacy</h2>
-        <p>Gem Slap is not directed at, and is not intended for use by, children under the age of 13. I do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal information in connection with the Game, please contact me at the address below and I will promptly take steps to delete any such information.</p>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Security</h2>
+          <p class="mt-3">I use reasonable measures to protect information, but no website, email system, or online service can be guaranteed to be completely secure.</p>
+        </section>
 
-    <section>
-        <h2>Data Retention &amp; Deletion</h2>
-        <p>Local browser data (localStorage) is retained on your device until you clear it through your browser settings. Analytics data is retained by Google according to their standard retention policies. Because I do not directly collect personally identifying information, there is typically no personal data on my end to delete — however, please contact me with any questions or requests.</p>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Children’s privacy</h2>
+          <p class="mt-3">This site is not intended for children under 13, and I do not knowingly collect personal information from children.</p>
+        </section>
 
-    <section>
-        <h2>California Residents (CCPA)</h2>
-        <p>California residents have rights under the California Consumer Privacy Act. Since I do not sell personal information and do not directly store personally identifying information about you, most CCPA provisions regarding data access, deletion, and opt-out of sale do not apply in the traditional sense. For analytics data held by Google, please refer to Google's CCPA disclosures. For questions specific to your California rights, contact me below.</p>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Changes to this Policy</h2>
+          <p class="mt-3">I may update this Privacy Policy from time to time. The updated version will be posted on this page with a revised effective date.</p>
+        </section>
 
-    <section>
-        <h2>International Users</h2>
-        <p>Gem Slap is operated from New York, United States. If you access the Game from outside the US, your information may be transferred to, stored in, and processed in the United States, where data protection laws may differ from those in your country. By using the Game, you consent to this transfer.</p>
-    </section>
+        <section>
+          <h2 class="text-xl font-black text-slate-950">Contact</h2>
+          <p class="mt-3">For questions about this Privacy Policy, contact me at <a class="font-semibold text-blue-700 hover:text-blue-900" href="mailto:ben@benswieskowski.com">ben@benswieskowski.com</a>.</p>
+        </section>
+      </div>
 
-    <section>
-        <h2>Contact</h2>
-        <p>Questions or concerns about this Privacy Policy should be directed to:</p>
-        <p><strong style="color:rgba(255,255,255,0.7)">Ben Swieskowski</strong><br>
-        <a href="mailto:hey@gemslap.com">hey@gemslap.com</a></p>
-    </section>
+    </article>
+  </main>
 
-    <div class="divider"></div>
-
-    <footer>
-        <span>© 2026 Ben Swieskowski. All rights reserved.</span>
-        <span><a href="/terms" style="color:var(--faint);border-color:transparent;">Terms &amp; Conditions</a></span>
-    </footer>
-
+  <footer class="border-t border-slate-200 bg-white px-5 py-8 sm:px-8">
+    <div class="mx-auto flex max-w-5xl flex-col gap-4 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="font-black text-slate-950">Ben Swieskowski</p>
+        <p>Paid Acquisition Consultant</p>
+      </div>
+      <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
+        <a class="hover:text-slate-950" href="mailto:ben@benswieskowski.com">ben@benswieskowski.com</a>
+        <a class="hover:text-slate-950" href="{{ url_for('privacy') }}">Privacy Policy</a>
+        <a class="hover:text-slate-950" href="{{ url_for('terms') }}">Terms</a>
+        <a class="hover:text-slate-950" href="{{ url_for('home') }}">benswieskowski.com</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
