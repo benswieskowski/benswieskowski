@@ -11,7 +11,15 @@
   <meta property="og:url" content="https://benswieskowski.com/" />
   <meta name="theme-color" content="#020617" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Favicons -->
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+  <link rel="canonical" href="https://benswieskowski.com/">
+
+<script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -413,24 +421,33 @@
               Email Instead
             </a>
           </div>
-
+          
         </div>
       </div>
     </section>
   </main>
 
   <footer class="border-t border-slate-200 bg-white px-5 py-8 sm:px-8">
-    <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
-      <div>
-        <p class="font-black text-slate-950">Ben Swieskowski</p>
-        <p>Paid Acquisition Consultant</p>
+    <div class="mx-auto max-w-7xl">
+      <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p class="font-black text-slate-950">Ben Swieskowski</p>
+          <p class="mt-1 text-sm text-slate-600">Paid Acquisition Consultant</p>
+        </div>
+
+        <div class="flex flex-col gap-2 text-sm text-slate-600 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2 md:justify-end">
+          <a class="hover:text-slate-950" href="mailto:{{ email }}">{{ email }}</a>
+          <a class="hover:text-slate-950" href="https://www.linkedin.com/in/benjamin-swieskowski-65a48b23/">LinkedIn</a>
+          <span>benswieskowski.com</span>
+        </div>
       </div>
-      <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
-        <a class="hover:text-slate-950" href="mailto:{{ email }}">{{ email }}</a>
-        <a class="hover:text-slate-950" href="https://www.linkedin.com/in/benjamin-swieskowski-65a48b23/">LinkedIn</a>
-        <a class="hover:text-slate-950" href="{{ url_for('privacy') }}">Privacy Policy</a>
-        <a class="hover:text-slate-950" href="{{ url_for('terms') }}">Terms</a>
-        <span>benswieskowski.com</span>
+
+      <div class="mt-6 flex flex-col gap-2 border-t border-slate-200 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 Ben Swieskowski. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a class="hover:text-slate-800" href="{{ url_for('privacy') }}">Privacy Policy</a>
+          <a class="hover:text-slate-800" href="{{ url_for('terms') }}">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
