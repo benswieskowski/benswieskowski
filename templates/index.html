@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ben Swieskowski | Paid Acquisition Consultant</title>
+  <meta name="description" content="Paid acquisition consulting for B2C brands, B2B SaaS teams, and founder-led companies using Google Ads, Meta Ads, testing, and conversion strategy." />
+  <meta property="og:title" content="Ben Swieskowski | Paid Acquisition Consultant" />
+  <meta property="og:description" content="Unlock better performance from Google and Meta ads." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://benswieskowski.com/" />
+  <meta name="theme-color" content="#020617" />
+
+
+  <!-- Favicons -->
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+  <link rel="canonical" href="https://benswieskowski.com/">
+
+<script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          boxShadow: {
+            soft: "0 22px 70px rgba(15, 23, 42, 0.10)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-950 antialiased">
+  {% set booking_url = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2fOEubqIJHxoFX6W3KrUwQBJx5D2d0z5oz5QiLJtsdXq6i2UO8q-korqV5qq5RAQmnOIklYfes" %}
+  {% set email = "ben@benswieskowski.com" %}
+
+  {% macro icon(type) -%}
+    {% if type == "arrow" %}
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+    {% elif type == "search" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    {% elif type == "click" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V4.5a2 2 0 1 1 4 0V12"/><path d="M12 12V9a2 2 0 1 1 4 0v4"/><path d="M16 13v-1a2 2 0 1 1 4 0v4c0 4-2.5 6-6 6h-2.5a5 5 0 0 1-4.4-2.6L4 14.5a2 2 0 0 1 3.2-2.3L8 13"/></svg>
+    {% elif type == "clipboard" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 2h3v16H5V5h3l1-2Z"/><path d="m9 13 2 2 4-5"/></svg>
+    {% elif type == "chart" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m6 16 4-5 4 3 5-8"/></svg>
+    {% elif type == "trend" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 7-9"/><path d="M14 6h6v6"/></svg>
+    {% elif type == "target" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+    {% elif type == "users" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    {% elif type == "zap" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 11-13h-8V2Z"/></svg>
+    {% elif type == "shield" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-5"/></svg>
+    {% elif type == "check" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+    {% elif type == "sparkle" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 13.7 8.3 19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z"/><path d="M19 15v4"/><path d="M21 17h-4"/></svg>
+    {% elif type == "mail" %}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+    {% endif %}
+  {%- endmacro %}
+
+  {% macro section_label(text, dark=False) -%}
+    {% if dark %}
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-300"></span>{{ text }}
+      </div>
+    {% else %}
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
+        <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>{{ text }}
+      </div>
+    {% endif %}
+  {%- endmacro %}
+
+  {% macro service_card(icon_name, title, copy) -%}
+    <div class="group rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/5">
+      <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-transform group-hover:scale-105">
+        {{ icon(icon_name) }}
+      </div>
+      <h3 class="text-lg font-bold tracking-tight text-slate-950">{{ title }}</h3>
+      <p class="mt-3 text-sm leading-6 text-slate-600">{{ copy }}</p>
+    </div>
+  {%- endmacro %}
+
+  {% macro audience_card(icon_name, title, copy) -%}
+    <div class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+      <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-blue-700">
+        {{ icon(icon_name) }}
+      </div>
+      <h3 class="text-xl font-bold tracking-tight text-slate-950">{{ title }}</h3>
+      <p class="mt-3 text-sm leading-6 text-slate-600">{{ copy }}</p>
+    </div>
+  {%- endmacro %}
+
+  {% macro metric_card(icon_name, title, value, detail) -%}
+    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-900">
+        {{ icon(icon_name) }}
+      </div>
+      <p class="text-sm font-semibold text-slate-600">{{ title }}</p>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-slate-950">{{ value }}</p>
+      <p class="mt-1 text-sm leading-6 text-slate-500">{{ detail }}</p>
+    </div>
+  {%- endmacro %}
+
+  <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+      <a href="#top" class="text-lg font-black tracking-tight text-slate-950">Ben Swieskowski</a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
+        <a class="hover:text-slate-950" href="#services">Services</a>
+        <a class="hover:text-slate-950" href="#who">Who I Help</a>
+        <a class="hover:text-slate-950" href="#about">Approach</a>
+        <a class="hover:text-slate-950" href="#performance">Performance</a>
+        <a class="hover:text-slate-950" href="#experience">Experience</a>
+        <a class="hover:text-slate-950" href="#process">Process</a>
+      </nav>
+      <a href="{{ booking_url }}" class="hidden rounded-full bg-slate-950 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800 sm:inline-flex">
+        Book an Intro Call
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="relative overflow-hidden border-b border-slate-200 bg-white">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(37,99,235,0.10),transparent_32%),radial-gradient(circle_at_90%_10%,rgba(15,23,42,0.06),transparent_26%)]"></div>
+
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:py-20">
+        <div>
+          {{ section_label("Independent paid acquisition consultant") }}
+
+          <h1 class="max-w-3xl text-4xl font-black tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">
+            Unlock Better Performance From Google &amp; Meta Ads
+          </h1>
+
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+            I help B2C brands, B2B SaaS teams, and founder-led companies improve paid acquisition by identifying wasted spend, weak signals, conversion gaps, and the highest-value opportunities across Google, Meta, and the funnel.
+          </p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="{{ booking_url }}" class="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-950/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2">
+              Book an Intro Call <span class="ml-2">{{ icon("arrow") }}</span>
+            </a>
+            <a href="#process" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-500 hover:bg-white">
+              See How I Work <span class="ml-2">{{ icon("arrow") }}</span>
+            </a>
+          </div>
+
+          <div class="mt-7 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm font-semibold text-slate-600">
+            <span>10+ years experience</span>
+            <span class="text-blue-600">•</span>
+            <span>Stanford master’s in statistics</span>
+            <span class="text-blue-600">•</span>
+            <span>Google Ads</span>
+            <span class="text-blue-600">•</span>
+            <span>Meta Ads</span>
+            <span class="text-blue-600">•</span>
+            <span>B2C & B2B</span>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-xl lg:max-w-none">
+          <div class="absolute -right-10 -top-10 h-64 w-64 rounded-full bg-blue-100 blur-3xl"></div>
+          <div class="absolute bottom-6 left-8 h-56 w-56 rounded-full bg-indigo-100 blur-3xl"></div>
+
+          <div class="relative rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-soft backdrop-blur">
+            <div class="mb-5 flex items-start justify-between gap-4">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-blue-700">Audit framework</p>
+                <h3 class="mt-2 text-2xl font-black tracking-tight text-slate-950">Paid Acquisition Diagnostic</h3>
+                <p class="mt-2 max-w-md text-sm leading-6 text-slate-600">
+                  A focused review of where paid media can become more efficient, reliable, and scalable.
+                </p>
+              </div>
+              <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                {{ icon("target") }}
+              </div>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-2">
+              <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-100 text-blue-700">{{ icon("search") }}</div>
+                <h4 class="font-black text-slate-950">Intent</h4>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Are we reaching the right people at the right moment?</p>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-slate-400">Queries · audiences · buyer stage</p>
+              </div>
+
+              <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">{{ icon("chart") }}</div>
+                <h4 class="font-black text-slate-950">Signal</h4>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Can we trust the data guiding decisions?</p>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-slate-400">Tracking · attribution · lead quality</p>
+              </div>
+
+              <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-violet-100 text-violet-700">{{ icon("sparkle") }}</div>
+                <h4 class="font-black text-slate-950">Message</h4>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Do ads, offers, and landing pages line up?</p>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-slate-400">Creative · offers · landing pages</p>
+              </div>
+
+              <div class="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">{{ icon("trend") }}</div>
+                <h4 class="font-black text-slate-950">Performance</h4>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Where can results improve most?</p>
+                <p class="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-slate-400">Budget · tests · scale</p>
+              </div>
+            </div>
+
+            <div class="mt-4 rounded-3xl border border-slate-800 bg-slate-950 p-4 text-white shadow-xl shadow-slate-900/15">
+              <div class="flex items-start gap-4">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-500 text-white">{{ icon("clipboard") }}</div>
+                <div>
+                  <p class="text-sm font-black">Output: 90-Day Growth Plan</p>
+                  <p class="mt-1 text-sm leading-6 text-slate-300">Prioritized actions to improve efficiency, signal quality, and scale.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="border-b border-slate-200 bg-slate-50">
+      <div class="mx-auto max-w-7xl px-5 py-7 sm:px-8">
+        <div class="flex flex-col gap-4 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:flex-row md:items-center md:justify-between">
+          <div class="max-w-3xl">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-blue-700">Start with an audit</p>
+            <h2 class="mt-2 text-2xl font-black tracking-tight text-slate-950">Paid Acquisition Audit + 90-Day Growth Plan</h2>
+            <p class="mt-2 text-base leading-7 text-slate-600">
+              A practical review of your ads, funnel, tracking, and conversion quality — with a roadmap for the highest-impact improvements.
+            </p>
+          </div>
+          <a href="{{ booking_url }}" class="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800">
+            Book an Intro Call <span class="ml-2">{{ icon("arrow") }}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        {{ section_label("What I help with") }}
+        <h2 class="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Paid acquisition that connects strategy to outcomes.</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-600">
+          I work across the parts of paid growth that usually determine whether spend becomes profitable customers, qualified leads, or actual pipeline.
+        </p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {{ service_card("search", "Google Search Growth", "Capture high-intent demand with sharper keyword strategy, query control, ad testing, and landing-page alignment.") }}
+        {{ service_card("click", "Meta Ads Strategy", "Build stronger creative, audiences, retargeting, and testing systems for consumer, lead gen, and B2B campaigns.") }}
+        {{ service_card("clipboard", "Paid Acquisition Audits", "Find wasted spend, weak conversion paths, tracking gaps, and missed opportunities across your paid media system.") }}
+        {{ service_card("chart", "Conversion & Funnel Strategy", "Improve the path from click to purchase, lead, demo, or qualified opportunity — not just the campaign settings.") }}
+      </div>
+    </section>
+
+    <section id="who" class="border-y border-slate-200 bg-white">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+        <div class="mb-12 max-w-3xl">
+          {{ section_label("Who I help") }}
+          <h2 class="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Built for teams that need sharper paid acquisition thinking, not just another ad vendor.</h2>
+        </div>
+        <div class="grid gap-5 lg:grid-cols-3">
+          {{ audience_card("zap", "B2C & Consumer Brands", "For brands that need better CAC, stronger creative testing, clearer offer strategy, and more efficient paths from ad click to purchase.") }}
+          {{ audience_card("target", "B2B SaaS & Lead Gen Teams", "For teams getting leads or demos from paid media, but not enough qualified opportunities or pipeline.") }}
+          {{ audience_card("users", "Founder-Led & Lean Teams", "For companies that need experienced paid growth direction without hiring a full-time lead or managing a traditional agency.") }}
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.95fr_1.05fr]">
+      <div>
+        {{ section_label("Approach") }}
+        <h2 class="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Pattern recognition from 10+ years across growth models.</h2>
+        <p class="mt-6 text-lg leading-8 text-slate-600">
+          I bring a rare mix of paid media experience and analytical depth, including a master’s degree in statistics from Stanford. That background shapes how I think about testing, signal quality, attribution, and whether campaign data is actually telling us what we think it is.
+        </p>
+        <p class="mt-5 text-lg leading-8 text-slate-600">
+          You work directly with me — not a sales team, account manager, or junior media buyer. The goal is expert strategy and hands-on execution without the agency handoff.
+        </p>
+        <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <p class="text-base font-bold text-slate-950">The work is simple to describe:</p>
+          <p class="mt-3 text-base leading-7 text-slate-600">
+            make paid media more efficient by improving the connection between targeting, intent, creative, messaging, landing pages, tracking, and the actual business outcome.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        {{ metric_card("shield", "Expert-Level Management", "10+ yrs", "Deep experience across Google Ads, Meta Ads, conversion strategy, and performance marketing.") }}
+        {{ metric_card("check", "Execution, not just advice", "Hands-on", "Strategy, account structure, copy testing, creative direction, landing-page recommendations, and optimization.") }}
+        {{ metric_card("target", "Business outcome focus", "CAC → Pipeline", "Recommendations tie back to purchases, leads, demos, qualified opportunities, and revenue quality.") }}
+        {{ metric_card("sparkle", "Stanford Statistics", "Analytical depth", "Master’s-level training in data, experimentation, and signal interpretation — applied to real-world paid acquisition decisions.") }}
+      </div>
+    </section>
+
+    <section id="performance" class="border-y border-slate-200 bg-white">
+      <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+        <div class="mx-auto mb-12 max-w-3xl text-center">
+          {{ section_label("Performance") }}
+          <h2 class="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">The biggest gains usually come from a few high-impact improvements.</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">
+            I look across intent, messaging, tracking, creative, and conversion flow to find where paid media can become more efficient, more reliable, and easier to scale.
+          </p>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {{ service_card("trend", "Spend Efficiency", "Find poor-fit queries, over-broad targeting, weak segmentation, and budget that could be working harder elsewhere.") }}
+          {{ service_card("target", "Message Match", "Align ads, offers, and landing pages with what prospects actually want at the moment they click.") }}
+          {{ service_card("check", "Conversion Quality", "Look beyond raw conversions to understand whether paid media is producing valuable customers, qualified leads, or real pipeline.") }}
+          {{ service_card("sparkle", "Testing Clarity", "Turn creative, copy, landing-page, and offer tests into clearer learning and better decisions.") }}
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+        <div>
+          {{ section_label("Past client experience") }}
+          <h2 class="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Experience across B2C, SaaS, tech, and lead generation</h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">
+            Over the last 10+ years, I’ve worked across consumer products, ecommerce-style direct response, lead generation, and B2B SaaS.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <p class="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Selected past clients</p>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {% set clients = [
+              ("Carta", "carta.png", "max-h-14 max-w-[210px]"),
+              ("eero", "eero.png", "max-h-14 max-w-[210px]"),
+              ("Tile", "tile.png", "max-h-14 max-w-[210px]"),
+              ("Indiegogo", "indiegogo.png", "max-h-14 max-w-[210px]"),
+              ("Helium Mobile", "helium-mobile.png", "max-h-14 max-w-[210px]"),
+              ("Alto Pharmacy", "alto-pharmacy.png", "max-h-14 max-w-[210px]"),
+              ("Molekule", "molekule.png", "max-h-16 max-w-[245px]"),
+              ("Osmo", "osmo.png", "max-h-14 max-w-[210px]"),
+              ("Looking Glass Factory", "looking-glass-factory.png", "max-h-16 max-w-[245px]"),
+              ("TradeBeyond", "tradebeyond.png", "max-h-12 max-w-[185px]"),
+              ("BoldVoice", "boldvoice.png", "max-h-14 max-w-[220px]"),
+              ("Uniregistry", "uniregistry.png", "max-h-12 max-w-[190px]")
+            ] %}
+            {% for name, filename, logo_size in clients %}
+              <div class="flex h-24 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 px-6">
+                <img
+                  src="{{ url_for('static', filename='logos/' ~ filename) }}"
+                  alt="{{ name }} logo"
+                  class="{{ logo_size }} object-contain opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0"
+                  loading="lazy"
+                />
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="mx-auto max-w-7xl px-5 py-20 sm:px-8">
+      <div class="mx-auto mb-12 max-w-3xl text-center">
+        {{ section_label("How I work") }}
+        <h2 class="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">Start with clarity. Then prioritize the work that can actually move performance.</h2>
+      </div>
+      <div class="grid gap-5 lg:grid-cols-3">
+        <div class="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-sm font-bold text-white">1</div>
+          <h3 class="text-lg font-bold text-slate-950">Audit</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Deep-dive into Google Ads, Meta, landing pages, tracking, conversion quality, and the full paid acquisition path.</p>
+        </div>
+        <div class="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-sm font-bold text-white">2</div>
+          <h3 class="text-lg font-bold text-slate-950">Prioritize</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Turn findings into a practical 90-day plan: quick wins, structural fixes, testing roadmap, and budget priorities.</p>
+        </div>
+        <div class="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-slate-950 text-sm font-bold text-white">3</div>
+          <h3 class="text-lg font-bold text-slate-950">Scale</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Execute, test, and improve the system over time — with a focus on efficient growth, not vanity metrics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-slate-950 px-5 py-20 text-white sm:px-8">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div>
+          {{ section_label("Start here", True) }}
+          <h2 class="text-4xl font-black tracking-tight sm:text-5xl">Paid Acquisition Audit + 90-Day Growth Plan</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+            A strategic review of your Google Ads, Meta ads, landing pages, tracking, and conversion quality — followed by a prioritized plan to improve performance.
+          </p>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white p-7 text-slate-950 shadow-2xl shadow-black/25">
+          <div class="flex items-start gap-4">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-600 text-white">{{ icon("mail") }}</div>
+            <div>
+              <h3 class="text-2xl font-black tracking-tight">Book an intro call</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600">
+                Grab a time on my calendar for a short intro call. Good fit if you want expert help diagnosing what is limiting paid media performance before committing to a larger engagement. If you prefer to send context first, email is available below.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6 grid gap-3">
+            <a href="{{ booking_url }}" class="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
+              Schedule Intro Call <span class="ml-2">{{ icon("arrow") }}</span>
+            </a>
+            <a href="mailto:{{ email }}" class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3.5 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-500">
+              Email Instead
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white px-5 py-8 sm:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-600 md:flex-row md:items-center md:justify-between">
+      <div>
+        <p class="font-black text-slate-950">Ben Swieskowski</p>
+        <p>Paid Acquisition Consultant</p>
+      </div>
+      <div class="flex flex-col gap-2 sm:flex-row sm:gap-6">
+        <a class="hover:text-slate-950" href="mailto:{{ email }}">{{ email }}</a>
+        <a class="hover:text-slate-950" href="https://www.linkedin.com/in/benjamin-swieskowski-65a48b23/">LinkedIn</a>
+        <span>benswieskowski.com</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
