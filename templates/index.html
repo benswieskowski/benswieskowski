@@ -12,7 +12,18 @@
   <meta name="theme-color" content="#020617" />
 
   
-  <!-- Favicons -->
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC8PK60WF1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XC8PK60WF1');
+  </script>
+
+<!-- Favicons -->
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
@@ -126,7 +137,7 @@
         <a class="hover:text-slate-950" href="#experience">Experience</a>
         <a class="hover:text-slate-950" href="#process">Process</a>
       </nav>
-      <a href="{{ booking_url }}" class="inline-flex rounded-full bg-slate-950 px-3.5 py-2.5 text-xs font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800 sm:px-4 sm:text-sm">
+      <a onclick="gtag(\'event\', \'book_intro_call_click\', {link_location: \'header\', link_url: \'{{ booking_url }}\'});" href="{{ booking_url }}" class="inline-flex rounded-full bg-slate-950 px-3.5 py-2.5 text-xs font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800 sm:px-4 sm:text-sm">
         Book an Intro Call
       </a>
     </div>
@@ -149,7 +160,7 @@
           </p>
 
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="{{ booking_url }}" class="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-950/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2">
+            <a onclick="gtag(\'event\', \'book_intro_call_click\', {link_location: \'hero\', link_url: \'{{ booking_url }}\'});" href="{{ booking_url }}" class="inline-flex items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-950/15 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2">
               Book an Intro Call <span class="ml-2">{{ icon("arrow") }}</span>
             </a>
             <a href="#process" class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-500 hover:bg-white">
@@ -243,7 +254,7 @@
               A practical review of your ads, funnel, tracking, and conversion quality — with a roadmap for the highest-impact improvements.
             </p>
           </div>
-          <a href="{{ booking_url }}" class="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800">
+          <a onclick="gtag(\'event\', \'book_intro_call_click\', {link_location: \'audit_strip\', link_url: \'{{ booking_url }}\'});" href="{{ booking_url }}" class="inline-flex shrink-0 items-center justify-center rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800">
             Book an Intro Call <span class="ml-2">{{ icon("arrow") }}</span>
           </a>
         </div>
@@ -414,10 +425,10 @@
           </div>
 
           <div class="mt-6 grid gap-3">
-            <a href="{{ booking_url }}" class="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
+            <a onclick="gtag(\'event\', \'book_intro_call_click\', {link_location: \'contact\', link_url: \'{{ booking_url }}\'});" href="{{ booking_url }}" class="inline-flex w-full items-center justify-center rounded-full bg-slate-950 px-5 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
               Schedule Intro Call <span class="ml-2">{{ icon("arrow") }}</span>
             </a>
-            <a href="mailto:{{ email }}" class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3.5 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-500">
+            <a onclick="gtag(\'event\', \'email_click\', {link_location: \'contact\', link_url: \'mailto:{{ email }}\'});" href="mailto:{{ email }}" class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3.5 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:border-slate-500">
               Email Instead
             </a>
           </div>
@@ -436,8 +447,8 @@
         </div>
 
         <div class="flex flex-col gap-2 text-sm text-slate-600 sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2 md:justify-end">
-          <a class="hover:text-slate-950" href="mailto:{{ email }}">{{ email }}</a>
-          <a class="hover:text-slate-950" href="https://www.linkedin.com/in/benjamin-swieskowski-65a48b23/">LinkedIn</a>
+          <a class="hover:text-slate-950" onclick="gtag(\'event\', \'email_click\', {link_location: \'footer\', link_url: \'mailto:{{ email }}\'});" href="mailto:{{ email }}">{{ email }}</a>
+          <a class="hover:text-slate-950" onclick="gtag(\'event\', \'linkedin_click\', {link_location: \'footer\', link_url: \'https://www.linkedin.com/in/benjamin-swieskowski-65a48b23/\'});" href="https://www.linkedin.com/in/benjamin-swieskowski-65a48b23/">LinkedIn</a>
           <span>benswieskowski.com</span>
         </div>
       </div>
@@ -445,8 +456,8 @@
       <div class="mt-6 flex flex-col gap-2 border-t border-slate-200 pt-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Ben Swieskowski. All rights reserved.</p>
         <div class="flex gap-4">
-          <a class="hover:text-slate-800" href="{{ url_for('privacy') }}">Privacy Policy</a>
-          <a class="hover:text-slate-800" href="{{ url_for('terms') }}">Terms</a>
+          <a class="hover:text-slate-800" onclick="gtag(\'event\', \'legal_link_click\', {link_text: \'Privacy Policy\'});" href="{{ url_for('privacy') }}">Privacy Policy</a>
+          <a class="hover:text-slate-800" onclick="gtag(\'event\', \'legal_link_click\', {link_text: \'Terms\'});" href="{{ url_for('terms') }}">Terms</a>
         </div>
       </div>
     </div>
